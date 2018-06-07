@@ -1,0 +1,4 @@
+administer appconfig coniguration:
+  title: 'Administer My Appconfig module Configuration'
+  description: 'Configure My Appconfig module settings.'
+  restrict access: true

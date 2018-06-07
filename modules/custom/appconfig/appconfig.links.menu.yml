@@ -1,0 +1,6 @@
+appconfig.admin:
+  title: 'App config'
+  description: 'Application config tabs'
+  parent: system.admin_config_development
+  route_name: appconfig.config
+  weight: 100

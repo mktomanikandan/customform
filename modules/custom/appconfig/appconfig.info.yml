@@ -1,0 +1,4 @@
+name: Application config secrets
+description: It's storing the application secrect config datas.
+core: 8.x
+type: module

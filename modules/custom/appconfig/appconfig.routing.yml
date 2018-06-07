@@ -1,0 +1,9 @@
+appconfig.config:
+  path: '/admin/config/appconfig/config'
+  defaults:
+    _form: '\Drupal\appconfig\Form\appconfigForm'
+    _title: 'App Secret Configuration'
+  requirements:
+    _permission: 'administer appconfig coniguration'
+  options:
+    _admin_route: TRUE
