@@ -1,0 +1,18 @@
+#User registration form routing URL
+userregistration.config:
+  path: '/user-register'
+  defaults:
+    _title: 'User Registration Form'
+    _form: '\Drupal\userregistration\Form\userregistrationForm'
+  requirements:
+    _permission: 'access content'
+
+#User Edit form routing URL
+userregistration.configs:
+  path: '/user-details/edit/{id}'
+  defaults:
+    _title: 'User details edit Form'
+    _form: '\Drupal\userregistration\Form\usereditForm'
+  requirements:
+    _permission: 'access content'
+    id: \d+

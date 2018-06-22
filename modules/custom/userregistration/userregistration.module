@@ -1,0 +1,206 @@
+<?php
+
+/**
+ * @file
+ * Contains entity_reference_rendered_view.module.
+ */
+
+/**
+ * Implements hook_views_data().
+ */
+function userregistration_views_data() {
+
+  // Numeric field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['id'] = [
+    'title' => t('id'),
+    'help' => t('Just a numeric field.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'numeric',
+    ],
+  ];
+
+  // Plain text field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['username'] = [
+    'title' => t('Username'),
+    'help' => t('Username of the user.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'standard',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'string',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'string',
+    ],
+  ];
+
+  // Plain text field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['email'] = [
+    'title' => t('E-mail'),
+    'help' => t('email of the user.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'standard',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'string',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'string',
+    ],
+  ];
+
+  // Plain text field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['mobnumber'] = [
+    'title' => t('Mobile Number'),
+    'help' => t('Mobile number of the user.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'standard',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'string',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'string',
+    ],
+  ];
+
+  // Plain text field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['gender'] = [
+    'title' => t('Gender'),
+    'help' => t('User gender.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'standard',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'string',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'string',
+    ],
+  ];
+
+  // Numeric field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['age'] = [
+    'title' => t('Age'),
+    'help' => t('user age.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'numeric',
+    ],
+  ];
+
+  // Numeric field, exposed as a field, sort, filter, and argument.
+  $data['userregistration']['status'] = [
+    'title' => t('Status'),
+    'help' => t('User Status.'),
+    'field' => [
+      // ID of field handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'sort' => [
+      // ID of sort handler plugin to use.
+      'id' => 'standard',
+    ],
+    'filter' => [
+      // ID of filter handler plugin to use.
+      'id' => 'numeric',
+    ],
+    'argument' => [
+      // ID of argument handler plugin to use.
+      'id' => 'numeric',
+    ],
+  ];
+
+  // Within 'table', the value of 'group' (translated string) is used as a
+  // prefix in Views UI for this table's fields, filters, etc. When adding
+  // a field, filter, etc. you can also filter by the group.
+  $data['userregistration']['table']['group'] = t('User details');
+
+  // Within 'table', the value of 'provider' is the module that provides schema
+  // or the entity type that causes the table to exist. Setting this ensures
+  // that views have the correct dependencies. This is automatically set to the
+  // module that implements hook_views_data().
+  $data['userregistration']['table']['provider'] = 'userregistration';
+
+  $data['userregistration']['table']['base'] = [
+    // Identifier (primary) field in this table for Views.
+    'field' => 'id',
+    'field' => 'username',
+    'field' => 'email',
+    'field' => 'mobnumber',
+    'field' => 'gender',
+    'field' => 'age',
+    'field' => 'status',
+    // Label in the UI.
+    'title' => t('User Details'),
+    // Longer description in the UI. Required.
+    'help' => t('User details.'),
+    'weight' => -10,
+  ];
+  return $data;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function userregistration_theme() {
+  return [
+    'views_view_table__user_list__page' => [
+      'template' => 'views-view-table--user-list--page',
+      'base hook' => 'view'
+    ],
+  ];
+}

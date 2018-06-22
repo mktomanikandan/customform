@@ -1,0 +1,52 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function userregistration_schema() {
+  $schema['userregistration'] = array(
+    'description' => 'Stores email, timestamp, nid and uid for an rsvp',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'username' => array(
+        'description' => 'This field stores username.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => 'Users email address.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ),
+      'mobnumber' => array(
+        'description' => 'Users mobile number.',
+        'type' => 'varchar',
+        'length' => 25
+      ),
+      'gender' => array(
+        'description' => 'User gender.',
+        'type' => 'varchar',
+        'length' => 20,
+      ),
+      'age' => array(
+        'description' => 'User age.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'status' => array(
+        'description' => 'User status.',
+        'type' => 'int',
+        'default' => '1',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
